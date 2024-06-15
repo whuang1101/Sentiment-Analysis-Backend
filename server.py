@@ -5,6 +5,7 @@ import praw
 from credentials import client_id, client_secret, username, password
 app = Flask(__name__)
 CORS(app)
+sentiment_analysis = pipeline(model="Dmyadav2001/Sentimental-Analysis")
 
 @app.route("/members")
 def members():
@@ -26,7 +27,6 @@ def get_reddit_comments(url):
     return positive,neutral,negative, title
 def sentiment_analysis(comments):
 
-    sentiment_analysis = pipeline(model="Dmyadav2001/Sentimental-Analysis")
     positive = []
     neutral = []
     negative = []
