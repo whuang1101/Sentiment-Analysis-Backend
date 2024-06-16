@@ -69,5 +69,5 @@ def is_valid_reddit_url(url):
     return bool(re.match(pattern, url))
 
 if __name__  == "__main__":
-    app.run(debug=False)
+    app.run()
     
